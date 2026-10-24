@@ -35,7 +35,7 @@ button{font-family:inherit;color:inherit}
 .nav .wrap{display:flex;align-items:center;gap:8px;padding-block:10px}
 .nav .logo{width:38px;height:38px;flex:none}
 .nav ul{display:flex;gap:4px;list-style:none;margin:0 0 0 auto;padding:0}
-.nav a{display:block;text-decoration:none;padding:6px 13px;border-radius:999px;border:2.5px solid transparent;font-size:15px}
+.nav a{display:block;text-decoration:none;padding:6px 11px;border-radius:999px;border:2.5px solid transparent;font-size:15px}
 .nav a.on{background:var(--coral);border-color:var(--ink)}
 
 section{padding-block:28px}
@@ -139,12 +139,50 @@ h2 .dot{width:14px;height:14px;border-radius:50%;border:3px solid var(--ink);fle
 h3.sub{font-size:17px;margin:26px 0 10px}
 footer{padding-block:20px 40px;text-align:center;font-size:13px;color:var(--ink-soft)}
 
+
+/* guide */
+.guide{margin-top:22px}
+.guide-head{font-size:18px;margin:0 0 6px;display:flex;align-items:center;gap:8px}
+.guide-intro{font-size:15px;margin:0 0 12px;color:var(--ink)}
+.gd{border:2.5px solid var(--ink);border-radius:18px;background:var(--white);margin-bottom:10px;overflow:hidden}
+.gd summary{list-style:none;cursor:pointer;padding:12px 44px 12px 14px;position:relative}
+.gd summary::-webkit-details-marker{display:none}
+.gd summary::after{content:"";position:absolute;right:16px;top:50%;width:9px;height:9px;border-right:3px solid var(--ink);border-bottom:3px solid var(--ink);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+.gd[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.gd[open] summary{background:var(--mizu-l);border-bottom:2.5px solid var(--ink)}
+.gd .gt-title{display:block;font-size:16px}
+.gd .gt-sub{display:block;font-size:13px;color:var(--ink-soft)}
+.gd .gb{padding:4px 14px 14px;font-size:15px;line-height:1.75}
+.gd .gb p{margin:10px 0}
+.gd .gb h5{font-size:15px;margin:16px 0 4px;padding-left:10px;border-left:4px solid var(--coral)}
+.gd .gb ul{margin:6px 0;padding-left:20px}
+.gd .gb li{margin:3px 0}
+.gd .gb b{background:linear-gradient(transparent 60%,var(--yellow-l) 60%)}
+.tbl{overflow-x:auto;margin:8px 0}
+table.gt{border-collapse:collapse;width:100%;font-size:14px;line-height:1.5}
+table.gt th,table.gt td{border:2px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+table.gt th{background:var(--paper);font-weight:normal;color:var(--ink-soft);font-size:13px}
+table.gt small{color:var(--ink-soft);font-size:12px}
+dl.gl{margin:6px 0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:14px}
+dl.gl dt{font-weight:700}dl.gl dd{margin:0}
+.note-box{margin:12px 0 4px;padding:10px 12px;border-radius:14px;border:2px dashed var(--ink);background:var(--yellow-l);font-size:14px}
+.src{margin-top:12px;font-size:12px;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:4px 10px}
+.src a{color:var(--ink-soft)}
+.sum{margin-top:6px;display:grid;gap:8px}
+.sum div{display:grid;grid-template-columns:72px 1fr;gap:10px;padding:10px 12px;border:2.5px solid var(--ink);border-radius:16px;background:var(--take-l);font-size:14px}
+/* souvenirs */
+.souv{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.souv li{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;padding:12px 14px;border:2.5px solid var(--ink);border-radius:18px;background:var(--white)}
+.souv .ic{width:44px;height:44px;border-radius:14px;border:2.5px solid var(--ink);display:grid;place-items:center;font-size:15px;font-variant-numeric:tabular-nums}
+.souv .pl{font-size:16px}
+.souv .pl a{text-decoration-color:var(--mizu);text-decoration-thickness:3px;text-underline-offset:4px}
+.souv .wh{font-size:14px;color:var(--ink-soft);margin-top:2px}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .bounce,.float,.float2,.sway,.steam{animation:none!important}
   .day-btn .pin,.bar i{transition:none}
 }
-@media (max-width:380px){.nav a{padding:6px 9px;font-size:14px}.hero h1{font-size:26px}}
+@media (max-width:400px){.nav a{padding:5px 7px;font-size:14px}.nav ul{gap:2px}}@media (max-width:380px){.hero h1{font-size:26px}}
 </style>
 </head>
 <body>
@@ -163,6 +201,7 @@ footer{padding-block:20px 40px;text-align:center;font-size:13px;color:var(--ink-
       <li><a href="#home" data-sec="home">首頁</a></li>
       <li><a href="#flight" data-sec="flight">航班</a></li>
       <li><a href="#plan" data-sec="plan">行程</a></li>
+      <li><a href="#gift" data-sec="gift">伴手禮</a></li>
       <li><a href="#prep" data-sec="prep">準備</a></li>
     </ul>
   </div>
@@ -232,6 +271,12 @@ footer{padding-block:20px 40px;text-align:center;font-size:13px;color:var(--ink-
   <div id="day" role="tabpanel"></div>
 </section>
 
+<section id="gift" class="wrap">
+  <h2><span class="dot" style="background:var(--yellow)"></span>伴手禮清單</h2>
+  <p class="muted" style="margin:-6px 0 12px">照順路的地點一次買齊</p>
+  <ul class="souv" id="souv"></ul>
+</section>
+
 <section id="prep" class="wrap">
   <h2><span class="dot" style="background:var(--take)"></span>出發前準備</h2>
   <div class="progress"><span class="num" id="prog-txt">0/6 完成</span><div class="bar"><i id="prog-bar"></i></div></div>
@@ -276,7 +321,7 @@ footer{padding-block:20px 40px;text-align:center;font-size:13px;color:var(--ink-
       {t:"09:30前",tg:["bus"],w:"到指定集合地點"},
       {t:"10:00",tg:["bus"],w:"出發"},
       {t:"11:00",w:"虎溪山永保寺",n:"停留 1 小時。國家名勝池泉庭園，本堂前有 700 年銀杏",q:"虎渓山永保寺"},
-      {t:"13:15",w:"小原四季櫻",n:"停留 30 分鐘。櫻花與紅葉同框，11/16–12/1 有四季櫻祭",q:"小原 四季桜"},
+      {t:"13:15",w:"小原四季櫻",n:"停留 30 分鐘。櫻花與紅葉同框；官方公告四季櫻祭 11/21–12/6，花況出發前再確認",q:"小原 四季桜"},
       {t:"15:00",tg:["must"],w:"香嵐溪：白天賞楓＋晚間點燈",n:"停留 120–210 分鐘，依當天路況調整，自由活動",q:"香嵐渓",m:1},
       {t:"20:00",tg:["bus"],w:"返回名古屋"},
       {t:"晚上",w:"自由晚餐、回飯店"}
@@ -294,8 +339,8 @@ footer{padding-block:20px 40px;text-align:center;font-size:13px;color:var(--ink-
     {d:"11/22",w:"週日",title:"下呂溫泉・飛驒牛・名古屋購物",stay:"住 名古屋萬豪",art:"onsen",items:[
       {t:"08:43",tg:["jr"],w:"JR 名古屋站 → 下呂",n:"特急飛驒號，10:15 抵達"},
       {t:"10:15",tg:["walk"],w:"下呂溫泉街散步、拍照",q:"下呂温泉 温泉街"},
-      {t:"11:00",tg:["must","tbd"],w:"水明館日歸露天溫泉",n:"11:00–12:00，需先確認是否開放、可否預約",q:"下呂温泉 水明館",m:1},
-      {t:"12:00",tg:["must","tbd"],w:"飛驒牛午餐",n:"12:00–13:20，需先預約"},
+      {t:"11:00",tg:["must","tbd"],w:"水明館日歸露天溫泉",n:"野天風呂＋展望大浴場，日歸受理 11:00–14:00，出發前向館方確認",q:"下呂温泉 水明館",m:1},
+      {t:"12:00",tg:["must","tbd"],w:"飛驒牛午餐：水明館北乃寮",n:"12:00–13:20。泡完直接用餐；三吃膳＋入浴方案參考價 ¥4,000 起，待確認",q:"下呂温泉 水明館"},
       {t:"13:20",tg:["walk"],w:"散步、回車站"},
       {t:"14:22",tg:["jr"],w:"下呂 → 名古屋",n:"特急飛驒號，16:09 抵達"},
       {t:"16:30",w:"榮・矢場町購物",n:"Nagoya PARCO 的 SNIDEL 等日牌，有時間再去 ZARA",q:"Nagoya PARCO"},
@@ -309,6 +354,7 @@ footer{padding-block:20px 40px;text-align:center;font-size:13px;color:var(--ink-
       {t:"12:00",tg:["taxi"],w:"返回萬豪、取行李"},
       {t:"12:30",w:"簡單午餐"},
       {t:"13:00",tg:["rail"],w:"前往中部國際機場",n:"約 13:00–14:00"},
+      {t:"14:00",w:"報到託運 → 4 樓伴手禮 → Sky Deck",n:"蝦仙貝之里在第一航廈 4 樓；都在安檢前，逛完再出境",q:"えびせんべいの里 セントレア"},
       {t:"16:40",tg:["air"],w:"搭機返臺",n:"19:10 抵達桃園 T1"}
     ],tips:[["c","控制時間","國定假日人多，本丸御殿排太久就縮短參觀，機場緩衝不能犧牲。"]]}
   ];
@@ -329,6 +375,119 @@ footer{padding-block:20px 40px;text-align:center;font-size:13px;color:var(--ink-
     ["清洲城","已有犬山城與名古屋城","no","不排","清洲城"],
     ["蘇山莊、德川園","需要完整半天","no","不排","徳川園"],
     ["新穗高纜車","距離下呂太遠","no","不排","新穂高ロープウェイ"]
+  ];
+
+  var GUIDE={
+  1:{intro:"三站各有不同的欣賞重點：永保寺看池、橋、佛堂與山岩如何構成一座庭園；小原看秋季櫻花與紅葉交織的特殊景觀；香嵐溪看數代人培育的山林，以及河谷在日夜之間的變化。",items:[
+    {t:"虎溪山永保寺",s:"在山水之間，欣賞日本禪寺庭園",b:
+     "<p>位於岐阜縣多治見市，歷史可追溯至 1313 年，與禪僧、造園名家夢窗疏石淵源深厚。夢窗也與京都天龍寺、西芳寺等名園有關；永保寺保留了他善用自然地形，把山岩、水流與寺院融為一體的造園特色。觀音堂與開山堂都是日本國寶，庭園是國家名勝。</p>"+
+     "<h5>欣賞重點：建築與山水的構圖</h5><p>以臥龍池為中心，池上的無際橋、岸邊的觀音堂和後方岩壁共同構成景觀。無際橋中央有小巧的屋亭，是庭園最醒目的特色；觀音堂可留意寬展的屋頂、微微上揚的屋簷，以及簷下深淺變化的陰影。</p>"+
+     "<h5>怎麼逛</h5><p>先在池畔看完整體，再沿開放步道慢慢移動，同一座橋與佛堂從不同角度看，前後層次都不一樣。秋天特別留意紅葉、木造建築與水面倒影如何互相襯托。</p>",
+     src:[["文化遺產線上","https://kunishitei.bunka.go.jp/bsys/maindetails/102/1044"],["永保寺官網","https://kokeizan.or.jp/pages/25/"]]},
+    {t:"小原四季櫻",s:"秋日山村中的櫻花與紅葉",b:
+     "<p>小原位於愛知縣豐田市北部山區。「四季櫻」雖然叫四季，其實主要在<b>春、秋兩季開花</b>。秋季花期與紅葉重疊時，淡色花朵和紅、橙色樹葉會交織在一起。</p>"+
+     "<p>依地方流傳的說法，約 1820 年醫師藤本玄碩從名古屋一帶取得櫻花苗木種在小原，之後逐漸推廣，今天已有約一萬株。</p>"+
+     "<h5>「小原四季櫻」是地區主題，不是單一景點</h5><p>賞花地點包括小原交流公園、和紙之鄉、川見四季櫻之鄉等。川見以山坡上約 1,200 株四季櫻與紅葉相映著稱，實際看到哪種景致，要看團停靠的會場。</p>"+
+     "<h5>怎麼看</h5><p>遠看整片山坡的色彩分布，近看枝頭花朵與秋葉的對比。</p>"+
+     "<div class=\"note-box\">官方公告 2026 年小原四季櫻祭為 <b>11/21–12/6</b>（Klook 頁面寫 11/16–12/1，以官方為準）。11/20 前往是祭典前一天，但花況和祭典日期是兩回事，接近出發時再確認開花程度。</div>",
+     src:[["豐田市","https://www.city.toyota.aichi.jp/shisei/jichiku/1008649/obara/1011191.html"],["豐田觀光：川見","https://www.tourismtoyota.jp/spots/detail/2266/"],["豐田觀光：四季櫻祭","https://www.tourismtoyota.jp/spots/detail/716/"]]},
+    {t:"香嵐溪",s:"由僧侶與地方居民共同培育的紅葉名所",b:
+     "<p>位於豐田市足助地區，以巴川與飯盛山為核心。沿河步行，可以從開闊的溪岸走進樹蔭，再往山寺方向探索。</p>"+
+     "<p>相傳 1634 年，香積寺第十一代住持三榮和尚在參道與寺院周邊種植楓樹與杉樹，寺方記載他每誦讀一卷《般若心經》便種下一棵樹。大正末期到昭和初期，當地青年團、婦女會也投入植樹，才形成今天的景觀。這是一片<b>由宗教、地方生活與數代人維護共同塑造的山林</b>。</p>"+
+     "<h5>三種視角</h5><table class=\"gt\"><tr><th>位置</th><th>欣賞重點</th></tr><tr><td>待月橋及河岸</td><td>橋梁、巴川與後方山坡一起看，掌握整體景觀</td></tr><tr><td>沿河步道、楓樹下</td><td>近看葉形與色彩差異，有陽光時看光線穿過葉片</td></tr><tr><td>往香積寺的參道</td><td>視線從河谷轉向山寺，感受石階、樹林與寺院相連</td></tr></table>"+
+     "<p>這裡有多種楓樹，變色節奏不同，綠、黃、橙、紅交錯的層次也很好看，不一定只有整片鮮紅才美。</p>"+
+     "<h5>日夜對照</h5><p>白天看葉片細節、溪水與遠近層次；點燈後看燈光勾勒的樹冠與水面倒影。<b>先散步看白天景色，再挑一兩個喜歡的位置於點燈後重訪</b>。點燈安排以當年度公告和團的停留時間為準。</p>",
+     src:[["香積寺","https://kojakuji.com/about/"],["足助觀光協會","https://asuke.info/korankei/"]]}
+  ]},
+  2:{intro:"今天的主線：從戰國武將爭奪天下，到江戶時代的交通與庶民生活，再到近代日本的工業化。犬山城、惠那峽、馬籠宿、妻籠宿正好從不同角度呈現這段歷史。",items:[
+    {t:"先認識時代背景",s:"今天走進日本歷史的哪一段？",b:
+     "<table class=\"gt\"><tr><th>時代</th><th>入門理解</th><th>本日景點</th></tr>"+
+     "<tr><td>戰國<br><small>15 世紀後半–16 世紀末</small></td><td>中央權威衰弱，武將競逐領地。信長、秀吉、家康先後推進統一。</td><td>犬山城</td></tr>"+
+     "<tr><td>江戶<br><small>1603–1867</small></td><td>德川幕府統制各地大名，穩定秩序讓城市、道路、商業與旅行文化發展。</td><td>馬籠宿、妻籠宿</td></tr>"+
+     "<tr><td>幕末至明治維新<br><small>19 世紀中後期</small></td><td>外國壓力使幕府動搖，1867 年大政奉還，制度劇烈改變。</td><td>島崎藤村《夜明前》</td></tr>"+
+     "<tr><td>明治以後<br><small>1868–</small></td><td>鐵路、工廠、電力改變生活，宿場失去功能。</td><td>惠那峽大井水壩、妻籠保存</td></tr></table>"+
+     "<h5>幾個常見名詞</h5><dl class=\"gl\"><dt>天皇</dt><dd>皇室與朝廷的核心；幕府時代仍存在，但政治軍事實權在武家。</dd><dt>將軍／幕府</dt><dd>將軍是武家政權的領袖，幕府是統治機構。</dd><dt>大名</dt><dd>擁有領地與家臣的武家領主。</dd><dt>城下町</dt><dd>圍繞城堡形成的城鎮。</dd><dt>宿場町</dt><dd>沿主要道路形成，提供住宿、人馬轉運的聚落。</dd></dl>",
+     src:[["國立國會圖書館兒童版","https://www.kodomo.go.jp/yareki/theme/theme_05.html"]]},
+    {t:"犬山城",s:"從一座城，看懂戰國武將如何爭奪天下",b:
+     "<p>位於木曾川南岸丘陵。傳統說法是約 1537 年由織田信長的叔父織田信康築城，但<b>築城年代和現存天守的年代要分開看</b>：木材年輪研究認為現存天守約建於 1590 年。</p>"+
+     "<h5>三位關鍵人物</h5><ul><li><b>織田信長</b>：大幅推進統一，1582 年於本能寺之變身亡。</li><li><b>豐臣秀吉</b>：在信長死後的權力競逐中崛起，完成全國統一。</li><li><b>德川家康</b>：秀吉死後取得優勢，1603 年建立江戶幕府。</li></ul>"+
+     "<h5>犬山城與小牧・長久手之戰</h5><p>1584 年，秀吉與織田信雄、德川家康聯軍對立。犬山城被秀吉方的池田恒興攻取，秀吉也曾入城。後來先後成為天下人的秀吉與家康，曾在這裡正面交鋒。1617 年成瀨正成獲授犬山城，成瀨家長期擔任城主，反映日本從戰國轉入德川的穩定秩序。</p>"+
+     "<h5>現場觀看重點</h5><ul><li><b>天守的木造空間</b>：樓梯、梁柱與樓層尺度。</li><li><b>頂層視野</b>：把木曾川與周邊地形當成一張軍事地圖。</li><li><b>城與城下町</b>：領主統治還需要家臣、商人與工匠支撐。</li></ul>"+
+     "<h5>影視連結</h5><p>NHK 大河劇《怎麼辦家康》第 32 集「小牧長久手的激戰」直接對應這段戰事。《幕府將軍》以 1600 年為背景，吉井虎永的原型是家康，可以建立對武家政治的感受，但情節經過改編。</p>",
+     src:[["犬山市","https://www.city.inuyama.aichi.jp/kurashi/bunka/1001052/1003738/1003739.html"],["國寶犬山城","https://inuyama-castle.jp/about/"]]},
+    {t:"惠那峽",s:"山水風景背後，是近代日本的電力建設",b:
+     "<p>惠那峽位於木曾川流域，今天的景觀與 <b>1924 年完成的大井水壩</b>密切相關。大井水壩與發電所是日本早期正式水壩式發電的重要工程，與「電力王」福澤桃介有關。明治走向大正，城市與工業需要更多電力，山區河川成了經濟發展的資源。</p>"+
+     "<p>戰國時代人們重視河流的防禦與渡河價值；到了近代，同一條河流變成發電資源。在展望臺可以觀察山壁、河道與蓄水水面的關係，想想水壩如何改變河川，電力又如何把山區與城市生活連在一起。</p>"+
+     "<p>歷史上可以倒過來理解今天的順序：鐵路與工業化興起後，馬籠、妻籠這類依靠舊道路維生的聚落，便必須面對新的處境。</p>",
+     src:[["惠那市觀光協會","https://www.kankou-ena.jp/areaguide/enakyo.php"],["土木學會選獎土木遺產","https://committees.jsce.or.jp/heritage/node/1258"]]},
+    {t:"馬籠宿",s:"沿著山坡，認識江戶時代的人如何旅行",b:
+     "<p>位於岐阜縣中津川市，以沿坡道延伸的街景著稱。中山道是江戶五街道之一，連接江戶與京都，沿途 69 個宿場；馬籠是從江戶起算的第 43 宿，妻籠是第 42 宿。</p>"+
+     "<h5>為什麼有這麼多人在路上移動？</h5><p>「參勤交代」要求大名往返領地與江戶、交替居住，既是向將軍表示臣服，也讓幕府統制各地；大名隊伍的移動帶動沿途交通和住宿需求。這項制度在 1635 年的《武家諸法度》中正式明文化。</p>"+
+     "<h5>本陣是什麼？</h5><p>宿場中供大名、公家與幕府官員住宿的設施，常由地方有地位的家族經營。馬籠的島崎家曾兼任本陣、庄屋與問屋。</p>"+
+     "<h5>文學連結：島崎藤村《夜明前》</h5><p>藤村出生於馬籠，藤村記念館就在他生家本陣的舊址。《夜明前》以父親為原型，描寫幕末到明治維新時木曾地方社會的變化。可以帶著一個問題逛：<b>明治維新走向現代化時，生活在山村的人能順利找到自己的位置嗎？</b></p>"+
+     "<h5>現場觀看重點</h5><ul><li>坡道與道路尺度：想像步行、挑行李、運貨的負擔。</li><li>街屋與主街：商業與生活如何沿道路集中。</li><li>本陣舊址與藤村記念館。</li></ul>",
+     src:[["馬籠觀光協會","https://www.kiso-magome.com/about"],["國土交通省","https://www.ktr.mlit.go.jp/yokohama/tokaido/02_tokaido/04_qa/index1/a0107.htm"],["中津川觀光協會","https://nakatsugawa.town/spot/%E9%A6%AC%E7%B1%A0%E5%AE%BF/"]]},
+    {t:"妻籠宿",s:"江戶交通的遺產，也是居民的保存選擇",b:
+     "<p>位於長野縣南木曾町。明治以後鐵路與新道路改變交通路線，妻籠失去宿場功能，舊街區反而保留較多早期樣貌。1960 年代居民開始推動保存，1968 年保存事業與「妻籠を愛する會」成立，成為日本歷史街區保存的重要先例。</p>"+
+     "<h5>居民三原則：不賣、不租、不拆</h5><p>「売らない・貸さない・こわさない」。核心是讓當地人持續生活、共同守護，把保存範圍從單棟古建築擴大到街道、聚落與周邊環境。</p>"+
+     "<h5>本陣與脇本陣</h5><p>妻籠本陣是島崎藤村母親的娘家，後來兄長也成為當主。<b>現今本陣是 1995 年依江戶後期圖面復原的建築</b>，參觀時要區分原物與重建。可以留意主人與客人的空間安排，以及不同房間的規模差異。</p>"+
+     "<h5>現場觀看重點</h5><ul><li>整條街的連續性：屋頂、簷下與街道的整體感。</li><li>生活與觀光共存：這裡仍是居民的生活場所。</li><li>保存與復原的差異。</li></ul>",
+     src:[["妻籠宿官網","https://tsumago.jp/learn/"],["南木曾町觀光協會","https://nagiso.jp/topics/tsumago-juku-honjin/"]]}
+  ],sum:[["犬山城","戰國武將如何利用城堡、河川與地形爭奪權力？"],["惠那峽","近代日本如何透過電力與工程重新利用山川？"],["馬籠宿","幕府建立秩序後，人員、貨物與命令如何跨越山區流動？"],["妻籠宿","舊交通路線失去作用後，地方如何重新確認自身價值？"]],sumTitle:"帶著這四個問題旅行"},
+  3:{intro:"理解下呂可以從三個層次切入：溫泉與療癒的信仰、文人傳播的名湯聲望，以及今天旅館與觀光形成的休閒文化。",items:[
+    {t:"下呂溫泉街",s:"白鷺、藥師如來與名湯的由來",b:
+     "<p>下呂沿飛驒川展開，有約千年的溫泉歷史。最有代表性的傳說是：原有湯泉停止湧出後，一隻白鷺來到飛驒川畔，讓村民發現新泉源，人們相信牠是藥師如來的化身。藥師如來與醫藥、療癒有關，故事把湧泉、身體康復與信仰連在一起。逛街時看到「白鷺」「藥師」等名稱，就是在呼應這段傳說。</p>"+
+     "<table class=\"gt\"><tr><th>層次</th><th>下呂的故事</th></tr><tr><td>信仰與傳說</td><td>藥師如來化身白鷺，指引人們找到溫泉</td></tr><tr><td>室町時代</td><td>禪僧萬里集九記述、讚美下呂</td></tr><tr><td>江戶時代</td><td>儒學者林羅山將下呂與有馬、草津並列為名泉</td></tr><tr><td>今日</td><td>旅館、浴場、足湯與料理構成完整的溫泉旅行</td></tr></table>"+
+     "<h5>「日本三名泉」是什麼意思？</h5><p>下呂、有馬、草津的並列來自文學與歷史評價，不是現代評比名次，也不表示泉質相同。林羅山也與這趟的德川歷史相連：他經藤原惺窩引介，於 1605 年見到德川家康。</p>"+
+     "<h5>選看：醫王靈山溫泉寺</h5><p>1671 年建立，供奉藥師如來，173 階石階上可以眺望溫泉街。上午時間有限，不必為了登階壓縮泡湯。</p>"+
+     "<h5>散步時留意</h5><ul><li>飛驒川兩岸的旅館、橋梁與山地。</li><li>白鷺相關的名稱與意象。</li><li>足湯與浴場如何進入公共空間。</li></ul>",
+     src:[["下呂溫泉觀光協會","https://www.gero-spa.com/spot/detail_1.html"],["溫泉寺","https://www.gero-spa.com/spot/detail_13.html"]]},
+    {t:"水明館",s:"體驗日本溫泉旅館的款待文化",b:
+     "<p>旅館把浴場、餐飲、庭園與休息空間結合，泡湯成為一段完整的休閒時間，日歸入浴也能體驗其中一部分。</p>"+
+     "<p>官方公布的日歸入浴包含<b>野天風呂與展望大浴場，受理時間 11:00–14:00</b>。11:00–12:00 可以完成一次入浴，但想慢慢看館內、整理頭髮，一小時會偏緊。當日可用浴場與清掃時間仍要向館方確認。</p>"+
+     "<h5>延伸：《羅馬浴場》</h5><p>漫畫與電影《テルマエ・ロマエ》以古羅馬浴場遇上日本泡湯文化製造笑點，和下呂歷史沒有直接關係，但可以輕鬆看看日本人對洗浴空間、用品和泡湯享受的講究。</p>",
+     src:[["水明館官網","https://www.suimeikan.co.jp/hotspring/"]]},
+    {t:"飛驒牛",s:"認識現代日本的地方食材品牌",b:
+     "<p>「飛驒牛」有明確認證條件，包括黑毛和種、在岐阜縣有規定的肥育經歷，以及肉質等級要求。<b>肉質 3、4、5 等級都可以是飛驒牛，不是只有 A5 才算</b>。飛驒牛品牌協議會把 2002 年全國和牛能力共進會的佳績，視為知名度提升的重要節點。</p>"+
+     "<h5>午餐怎麼選</h5><table class=\"gt\"><tr><th>餐廳</th><th>適合</th><th>搭配行程</th></tr>"+
+     "<tr><td><b>水明館「北乃寮」</b><br><small>首選</small></td><td>日式飛驒牛午餐，悠閒泡湯</td><td>泡完直接用餐，不用移動</td></tr>"+
+     "<tr><td>飛驒牛茶寮「神月」</td><td>正式牛排午餐</td><td>建議搭計程車，訂位時說明搭車時間</td></tr>"+
+     "<tr><td>下呂松葉</td><td>洋食、炸牛排</td><td>備選，需另留移動時間</td></tr></table>"+
+     "<p>北乃寮官方曾列飛驒牛三吃膳（ひつまぶし）＋入浴方案，每人 ¥4,000 起，可作預算參考；11 月是否供應、最新價格仍待確認。</p>"+
+     "<p>神月（旅館水鳳園經營）午餐：50g A4 肩里肌 ¥3,960、70g ¥5,500、100g ¥7,700（含稅，附前菜、湯、沙拉、主食、甜點）。50g 偏少量品嚐，專程吃牛排建議 100g。官網的平日特餐寫的是「黑毛和牛」，不是飛驒牛套餐。下呂松葉 1978 年創業，標示使用 A5 飛驒牛。</p>",
+     src:[["水明館日歸方案","https://www.suimeikan.co.jp/oneday/?c=7"],["神月","https://www.s-kangetsu.com/"],["下呂松葉","https://www.geromatsuba.com/"],["飛驒牛品牌協議會","https://www.hidagyu-gifu.com/hidagyu.php"]]}
+  ]},
+  4:{intro:"犬山城讓我們看見戰國時代的權力爭奪，名古屋城則說明德川家取得優勢後，如何建立長期統治，很適合當作這趟歷史旅行的收尾。",items:[
+    {t:"名古屋城",s:"德川家如何把天下變成長久的統治",b:
+     "<p>1610 年奉德川家康之命興建，作為第九子德川義直的居城。天守 1612 年完成，本丸御殿 1615 年完成；同年大坂之陣結束，豐臣家滅亡。名古屋城誕生於<b>戰國走向統一、德川統治逐步鞏固的過渡期</b>。</p>"+
+     "<table class=\"gt\"><tr><th>年份</th><th>事件</th></tr><tr><td>1584</td><td>小牧・長久手之戰，犬山城是據點</td></tr><tr><td>1603</td><td>家康出任將軍，建立江戶幕府</td></tr><tr><td>1610</td><td>名古屋城開始興建</td></tr><tr><td>1615</td><td>本丸御殿完成；大坂之陣結束</td></tr></table>"+
+     "<h5>德川御三家</h5><p>家康安排兒子建立尾張、紀伊、水戶三個分家。名古屋城是尾張德川家的居城，尾張被視為御三家之首。</p>"+
+     "<h5>天下普請</h5><p>加藤清正、福島正則等大名被動員出錢出力築城，也藉此表達服從。看石垣時，可以想像背後的採石、運輸與施工組織，<b>城的規模本身就是政權動員能力的展示</b>。</p>"+
+     "<h5>金鯱</h5><p>1612 年天守完成時就安置在屋頂，用來彰顯家康的支配力與尾張德川家的權威。</p>",
+     src:[["Visit Nagoya","https://www.nagoya-info.jp/zhtw/spot/detail/1/"],["名古屋城官網","https://www.nagoyajo.city.nagoya.jp/guide/nagoyajo/"]]},
+    {t:"本丸御殿",s:"從房間、繪畫與裝飾，看見身分秩序",b:
+     "<p><b>天守</b>是城的核心，具軍事與權威象徵功能；<b>御殿</b>是領主生活、處理政務、接見與舉行儀式的空間。本丸御殿原是義直的住所與政廳，1620 年後轉為將軍往返京都時的宿館。</p>"+
+     "<p>參觀時留意<b>不同房間的裝飾並不相同</b>：天花板、欄間雕刻、金屬飾件與障壁畫，會隨用途與接待對象的地位改變。</p>"+
+     "<table class=\"gt\"><tr><th>重點</th><th>欣賞方式</th></tr><tr><td>玄關《竹林豹虎圖》</td><td>金色背景、竹林與虎豹營造初入御殿的氣勢</td></tr><tr><td>表書院</td><td>把房間當作正式接見的舞臺，看主客關係</td></tr><tr><td>對面所</td><td>藩主與親近者、家臣會面及宴席，畫題不同</td></tr><tr><td>上洛殿</td><td>為迎接將軍增建，最華麗，看彩色欄間雕刻與天花板</td></tr></table>"+
+     "<h5>這是江戶時代留下的嗎？</h5><ul><li>1945 年：天守與本丸御殿於戰火中燒毀。</li><li>1959 年：天守以鋼骨鋼筋混凝土重建。</li><li>2018 年：依古文獻、戰前照片與實測圖復原的本丸御殿全面完成。</li></ul><p>部分原有障壁畫因事先拆下而逃過戰火，由館方保存、分期公開。</p>"+
+     "<h5>和犬山城一起看</h5><p>犬山城看保存至今的木造天守與河川地形；名古屋城看德川政權的規模、御殿文化，以及戰後如何重建歷史。</p>"+
+     "<div class=\"note-box\">天守目前閉館，本丸御殿可參觀，成人 ¥1,000。建議順序：本丸御殿 → 天守與金鯱外觀 → 沿途石垣。御殿排隊久就縮短其他區域。</div>",
+     src:[["本丸御殿","https://www.nagoyajo.city.nagoya.jp/guide/honmarugoten/"],["御殿復原","https://www.nagoyajo.city.nagoya.jp/learn/construction/honmarugoten/"]]},
+    {t:"中部國際機場",s:"旅行最後一站",b:
+     "<p>又稱 Centrair，2005 年 2 月 17 日開港，從規劃起就重視餐飲、商業與參觀體驗。以下都在<b>安檢前的公共區域</b>，先逛再進管制區。</p>"+
+     "<table class=\"gt\"><tr><th>地點</th><th>亮點</th><th>預留</th></tr><tr><td>第一航廈 4 樓商店街</td><td>買伴手禮、用餐</td><td>30–60 分</td></tr><tr><td>Sky Deck 展望臺</td><td>戶外看停機坪與起降，免費</td><td>15–30 分</td></tr><tr><td>FLIGHT OF DREAMS</td><td>波音 787 初號機 ZA001</td><td>45–60 分＋移動</td></tr><tr><td>風之湯</td><td>展望浴場</td><td>另留充裕時間</td></tr></table>"+
+     "<p>4 樓「ちょうちん横丁」以舊街道氛圍呈現商店街，可以和前幾天看過的真正宿場町比較。FLIGHT OF DREAMS 是獨立區域，從機場車站往第 2 航廈方向步行約 5 分鐘，時間不夠就留在第一航廈。</p>"+
+     "<div class=\"note-box\">建議動線：報到託運 → 4 樓買伴手禮 → Sky Deck 看飛機 → 安檢出境。</div>",
+     src:[["Centrair 蝦仙貝之里","https://www.centrair.jp/shop-dine/shop/ebisenbei.html"],["FLIGHT OF DREAMS","https://www.centrair.jp/flight-of-dreams/"]]}
+  ]}
+  };
+
+  var SOUV=[
+    {p:"名古屋站中央通道",w:"Piyorin village 小物、燒菓子",q:"ぴよりん 名古屋駅"},
+    {p:"JR 名古屋高島屋",w:"坂角黃金罐，順便看其他禮盒",q:"坂角総本舗 ジェイアール名古屋タカシマヤ"},
+    {p:"車站西側 ESCA 地下街",w:"青蛙饅頭、兩口屋是清和菓子",q:"エスカ 名古屋"},
+    {p:"逛榮時",w:"想嘗鮮再找 B.sablé，不必單獨跑一趟",q:""},
+    {p:"回程機場 4 樓",w:"蝦仙貝之里，補買分享零食",q:"えびせんべいの里 セントレア"}
   ];
 
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
@@ -365,6 +524,16 @@ footer{padding-block:20px 40px;text-align:center;font-size:13px;color:var(--ink-
     });
     h+='</ol>';
     if(D.tips){h+='<div class="tips">';D.tips.forEach(function(t){h+='<div class="tip '+t[0]+'"><b>'+esc(t[1])+'</b>'+esc(t[2])+'</div>'});h+='</div>'}
+    var G=GUIDE[i];
+    if(G){
+      h+='<div class="guide"><h4 class="guide-head"><span class="dot" style="width:12px;height:12px;border-radius:50%;border:3px solid var(--ink);background:var(--mizu)"></span>行前景點導讀</h4><p class="guide-intro">'+G.intro+'</p>';
+      G.items.forEach(function(it){
+        var b=it.b.replace(/<table/g,'<div class="tbl"><table').replace(/<\/table>/g,'</table></div>');
+        h+='<details class="gd"><summary><span class="gt-title">'+esc(it.t)+'</span><span class="gt-sub">'+esc(it.s)+'</span></summary><div class="gb">'+b+(it.src?'<div class="src">資料來源：'+it.src.map(function(x){return '<a href="'+x[1]+'" target="_blank" rel="noopener">'+esc(x[0])+'</a>'}).join("")+'</div>':'')+'</div></details>';
+      });
+      if(G.sum){h+='<h4 class="guide-head" style="font-size:16px;margin-top:16px">'+esc(G.sumTitle)+'</h4><div class="sum">'+G.sum.map(function(x){return '<div><b>'+esc(x[0])+'</b><span>'+esc(x[1])+'</span></div>'}).join("")+'</div>'}
+      h+='</div>';
+    }
     dayEl.innerHTML=h;
   }
   function select(i,animate){
@@ -423,13 +592,21 @@ footer{padding-block:20px 40px;text-align:center;font-size:13px;color:var(--ink-
     pl.appendChild(d);
   });
 
+  // souvenirs
+  var sv=document.getElementById("souv"),bg=["var(--coral-l)","var(--yellow-l)","var(--mizu-l)","var(--take-l)","var(--coral-l)"];
+  SOUV.forEach(function(x,i){
+    var li=document.createElement("li");
+    li.innerHTML='<span class="ic" style="background:'+bg[i]+'">'+(i+1)+'</span><div><div class="pl">'+(x.q?'<a href="'+M(x.q)+'" target="_blank" rel="noopener">'+esc(x.p)+'</a>':esc(x.p))+'</div><div class="wh">'+esc(x.w)+'</div></div>';
+    sv.appendChild(li);
+  });
+
   // nav highlight via IntersectionObserver
   var links={};document.querySelectorAll(".nav a").forEach(function(a){links[a.dataset.sec]=a});
   if("IntersectionObserver" in window){
     var io=new IntersectionObserver(function(es){
       es.forEach(function(e){if(e.isIntersecting){Object.keys(links).forEach(function(k){links[k].classList.toggle("on",k===e.target.id)})}});
     },{rootMargin:"-45% 0px -50% 0px"});
-    ["home","flight","plan","prep"].forEach(function(id){io.observe(document.getElementById(id))});
+    ["home","flight","plan","gift","prep"].forEach(function(id){io.observe(document.getElementById(id))});
   }
   links.home.classList.add("on");
 })();
