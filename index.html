@@ -177,6 +177,23 @@ dl.gl dt{font-weight:700}dl.gl dd{margin:0}
 .souv .pl{font-size:16px}
 .souv .pl a{text-decoration-color:var(--mizu);text-decoration-thickness:3px;text-underline-offset:4px}
 .souv .wh{font-size:14px;color:var(--ink-soft);margin-top:2px}
+.todo-grp{font-size:15px;margin:10px 0 0;color:var(--ink-soft)}
+.todo-grp:first-child{margin-top:0}
+.todo-link{display:inline-block;margin-left:6px;font-size:13px;color:var(--ink);text-decoration-color:var(--mizu);text-decoration-thickness:3px;text-underline-offset:3px}
+.todo input:checked + span .todo-link{color:var(--ink-soft)}
+.tax{background:var(--coral-l);font-size:15px;line-height:1.7}
+.tax p{margin:0 0 8px}
+.tax b{background:linear-gradient(transparent 60%,var(--yellow) 60%)}
+.tax-steps{margin:0 0 10px;padding-left:22px}
+.tax-steps li{margin:6px 0}
+.tax-warn{margin:0;padding:10px 12px 10px 28px;background:var(--white);border:2px dashed var(--ink);border-radius:14px;font-size:14px}
+.tax-warn li{margin:3px 0}
+.fly{display:grid;gap:10px}
+.fly-card{padding:14px 16px}
+.fly-card h4{margin:0 0 6px;font-size:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.fly-card ul{margin:0;padding-left:20px;font-size:15px;line-height:1.7}
+.fly-card li{margin:3px 0}
+.fly-card b{background:linear-gradient(transparent 60%,var(--yellow-l) 60%)}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .bounce,.float,.float2,.sway,.steam{animation:none!important}
@@ -279,8 +296,55 @@ dl.gl dt{font-weight:700}dl.gl dd{margin:0}
 
 <section id="prep" class="wrap">
   <h2><span class="dot" style="background:var(--take)"></span>出發前準備</h2>
-  <div class="progress"><span class="num" id="prog-txt">0/6 完成</span><div class="bar"><i id="prog-bar"></i></div></div>
+  <div class="progress"><span class="num" id="prog-txt">0/14 完成</span><div class="bar"><i id="prog-bar"></i></div></div>
   <ul class="todo" id="todo"></ul>
+
+  <h3 class="sub">退稅新制（2026/11/1 起）</h3>
+  <div class="card tax">
+    <p class="tax-lead">這趟購物全部適用新制：<b>結帳先付含稅價，出境時經海關確認後才退稅</b>。不再有店內直接免稅。</p>
+    <ol class="tax-steps">
+      <li><b>買的時候</b>：同一家店同一天未稅滿 ¥5,000 才適用。結帳出示護照，收據留好。退款方式由各店或退稅代理決定，結帳時先問清楚。</li>
+      <li><b>回程到機場</b>：免稅品要全部帶在身邊，<b>在報到託運之前</b>先到海關 kiosk 刷護照。綠燈免查；紅燈就到海關檢查台出示商品。中部機場也可以用 Visit Japan Web 線上辦理，最晚到安檢前。</li>
+      <li><b>完成後</b>才去報到託運，商品不能先託運，託運後也拿不回來補辦。</li>
+    </ol>
+    <ul class="tax-warn">
+      <li>以收據為單位：同一張收據上只要有一件不見，整張都不能退。</li>
+      <li>食品、化妝品等在日本已使用的消耗品不能退；已吃掉一部分的，要到海關櫃台說明，不要用 kiosk。</li>
+      <li>消耗品專用封裝袋取消了。</li>
+      <li>購買日起 90 天內要出境；登機前沒辦完，航空公司和海關都不補救。</li>
+    </ul>
+    <div class="src">資料來源：<a href="https://www.mlit.go.jp/kankocho/tax-free/page01_000001_00021.html" target="_blank" rel="noopener">日本觀光廳</a><a href="https://www.nagoya-info.jp/zhcn/news/detail/1405/" target="_blank" rel="noopener">名古屋觀光</a></div>
+  </div>
+
+  <h3 class="sub">搭機注意事項</h3>
+  <div class="fly">
+    <div class="card fly-card">
+      <h4><span class="tag t-must">最容易被沒收</span>行動電源</h4>
+      <ul>
+        <li><b>只能隨身，不能託運</b>，手機、筆電內建電池也一樣。</li>
+        <li>日本 2026/4/24 起：每人最多 2 個，容量 160Wh 以下，標示不清可能被拒。</li>
+        <li>機上<b>不能用行動電源充手機，也不能幫行動電源充電</b>；起飛前先把手機充飽。</li>
+        <li>不要放上方行李櫃，放前方座椅下或隨身小包；輸出孔貼膠帶或各自裝袋，避開鑰匙、零錢。</li>
+      </ul>
+    </div>
+    <div class="card fly-card">
+      <h4><span class="tag t-air">隨身行李</span>液體與小物</h4>
+      <ul>
+        <li>液體、凝膠、噴霧每瓶 100ml 以下，裝進 1 公升透明夾鏈袋，安檢時拿出來。</li>
+        <li>回程買的清酒、醬料、味噌、布丁、果凍這類液體或膠狀伴手禮，<b>放託運行李</b>。</li>
+        <li>剪刀、小刀、眉剪放託運；打火機只能隨身帶 1 個，不能託運。</li>
+      </ul>
+    </div>
+    <div class="card fly-card">
+      <h4><span class="tag t-rail">回台灣入境</span>這些不要帶</h4>
+      <ul>
+        <li><b>所有肉製品都不能帶回台灣</b>：飛驒牛真空包、肉乾、含肉的泡麵或調理包都算，違規最高可罰新台幣 100 萬元。</li>
+        <li>新鮮水果、植物、種子不要帶。</li>
+        <li>免稅額度：酒 1 公升、捲菸 200 支（滿 18 歲）。新台幣現金超過 10 萬元或外幣超過等值 1 萬美元要申報。</li>
+      </ul>
+    </div>
+    <div class="src">資料來源：<a href="https://mrmad.com.tw/japan-power-bank-regulations-2026" target="_blank" rel="noopener">日本行動電源新制</a><a href="https://www.ctee.com.tw/news/20260616701732-430104" target="_blank" rel="noopener">防檢署肉品規定</a>。規定可能變動，出發前以航空公司公告為準。</div>
+  </div>
 
   <h3 class="sub">熱田神宮怎麼排？</h3>
   <div class="tips">
@@ -348,13 +412,14 @@ dl.gl dt{font-weight:700}dl.gl dd{margin:0}
     ],tips:[["c","這天比較累","早上 8:43 搭車、晚上逛到 20:00。在水明館泡得舒服想多待，就改搭 15:32–17:05 的車回名古屋，晚上的購物時間縮短。"],["m","熱田神宮方案二","下呂回來後去參拜，但會壓縮購物時間。"],["y","列車時刻","依 2026 年 10 月公開班表，出發前再確認。"]]},
     {d:"11/23",w:"週一",title:"名古屋城・本丸御殿・返臺",stay:"日本國定假日・16:40 起飛",art:"castle",items:[
       {t:"09:15",w:"起床、整理行李"},
-      {t:"09:50",w:"退房，行李寄放萬豪"},
+      {t:"09:50",w:"退房，行李寄放萬豪",n:"免稅品和收據集中收好，回程要先給海關確認"},
       {t:"10:05",tg:["taxi"],w:"前往名古屋城",n:"約 30 分鐘"},
       {t:"10:35",tg:["must"],w:"名古屋城外觀、本丸御殿",n:"10:35–11:55。本丸御殿可入內，天守閣目前不能進；成人門票 ¥1,000",q:"名古屋城",m:1},
       {t:"12:00",tg:["taxi"],w:"返回萬豪、取行李"},
       {t:"12:30",w:"簡單午餐"},
       {t:"13:00",tg:["rail"],w:"前往中部國際機場",n:"約 13:00–14:00"},
-      {t:"14:00",w:"報到託運 → 4 樓伴手禮 → Sky Deck",n:"蝦仙貝之里在第一航廈 4 樓；都在安檢前，逛完再出境",q:"えびせんべいの里 セントレア"},
+      {t:"14:00",tg:["must"],w:"先過海關退稅 kiosk，再報到託運",n:"免稅品全部帶在身邊、刷護照；或用 Visit Japan Web 線上辦理。託運後就不能補辦",m:1},
+      {t:"之後",w:"4 樓伴手禮 → Sky Deck → 安檢出境",n:"蝦仙貝之里在第一航廈 4 樓，都在安檢前",q:"えびせんべいの里 セントレア"},
       {t:"16:40",tg:["air"],w:"搭機返臺",n:"19:10 抵達桃園 T1"}
     ],tips:[["c","控制時間","國定假日人多，本丸御殿排太久就縮短參觀，機場緩衝不能犧牲。"]]}
   ];
@@ -365,7 +430,15 @@ dl.gl dt{font-weight:700}dl.gl dd{margin:0}
     "預約 11/22 飛驒牛午餐，確認與泡湯時間能否銜接",
     "確認並預訂 11/22 特急飛驒號往返車票",
     "確認 11/19 共同聚餐的確切時間，決定熱田神宮能否安排",
-    "確認 11/23 機場報到時間與名鐵車次"
+    "確認 11/23 機場報到時間與名鐵車次",
+    {g:"出國前檢查",t:"護照效期涵蓋整趟旅程（11/19–11/23）"},
+    {t:"行動電源最多 2 個、確認容量標示清楚，放隨身行李"},
+    {t:"機票英文姓名與護照完全一致"},
+    {t:"填寫 Visit Japan Web，最晚抵達前 6 小時完成（11/19 09:35 前，等於出門前就要填好），截圖 QR Code",a:["前往 Visit Japan Web（官方）","https://www.vjw.digital.go.jp/"]},
+    {t:"出發前線上報到（多數航空公司約 48 小時前開放，依實際航空公司為準）"},
+    {t:"完成旅平險、不便險投保"},
+    {t:"信用卡開啟海外刷卡並調整額度，致電銀行備註國外旅遊"},
+    {t:"看過下方「退稅新制」：免稅品結帳出示護照、保留收據，回程全部帶著先過海關",a:["觀光廳免稅新制說明","https://www.mlit.go.jp/kankocho/tax-free/page01_000001_00021.html"]}
   ];
 
   var PLACES=[
@@ -568,8 +641,10 @@ dl.gl dt{font-weight:700}dl.gl dd{margin:0}
   var saved={};try{saved=JSON.parse(localStorage.getItem("ngo-todo")||"{}")}catch(e){saved={}}
   var todo=document.getElementById("todo");
   TODO.forEach(function(t,i){
+    if(typeof t==="string")t={t:t};
+    if(i===0||t.g){var hd=document.createElement("li");hd.className="todo-grp";hd.textContent=t.g||"行程待確認";todo.appendChild(hd)}
     var li=document.createElement("li");
-    li.innerHTML='<label for="todo'+i+'"><input type="checkbox" id="todo'+i+'"'+(saved[i]?' checked':'')+'><span>'+esc(t)+'</span></label>';
+    li.innerHTML='<label for="todo'+i+'"><input type="checkbox" id="todo'+i+'"'+(saved[i]?' checked':'')+'><span>'+esc(t.t)+(t.a?'<a class="todo-link" href="'+t.a[1]+'" target="_blank" rel="noopener">'+esc(t.a[0])+' ↗</a>':'')+'</span></label>';
     todo.appendChild(li);
   });
   function prog(){
